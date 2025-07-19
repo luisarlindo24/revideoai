@@ -4,141 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Revideo AI - Plataforma Futurista</title>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Fonte Inter para alta legibilidade -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Exo 2', sans-serif;
-      background: linear-gradient(135deg, #0d0d0d 0%, #121212 100%);
-      color: #00ffea;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+      color: #a0f0e8;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
+      line-height: 1.6;
+      user-select: none;
     }
 
     header {
       position: fixed;
       top: 0;
-      width: 100%;
-      background: #111111;
+      left: 0;
+      right: 0;
+      background: #111111cc;
+      backdrop-filter: saturate(180%) blur(15px);
+      box-shadow: 0 0 15px #2fffdcaa;
       padding: 15px 40px;
-      box-shadow: 0 0 20px #00ffea;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
+      z-index: 100;
     }
 
     .logo {
       font-weight: 700;
       font-size: 1.8rem;
-      letter-spacing: 2px;
-      user-select: none;
-      color: #00ffea;
-      text-shadow: 0 0 10px #00ffea;
+      letter-spacing: 3px;
+      color: #2fffdc;
+      text-shadow: 0 0 15px #2fffdc;
+      user-select: text;
+      cursor: default;
     }
 
     nav a {
-      color: #00ffea;
-      margin-left: 25px;
+      color: #2fffdc;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      margin-left: 30px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: text;
       border: 2px solid transparent;
-      padding: 6px 15px;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      user-select: none;
     }
 
-    nav a:hover {
-      background: #00ffea;
+    nav a:first-child {
+      margin-left: 0;
+    }
+
+    nav a:hover, nav a:focus {
+      background-color: #2fffdc;
       color: #121212;
-      border-color: #00ffea;
-      box-shadow: 0 0 15px #00ffea;
+      outline: none;
+      box-shadow: 0 0 20px #2fffdc;
+      border-color: #2fffdc;
     }
 
     main {
-      margin-top: 90px;
-      max-width: 700px;
+      max-width: 720px;
+      margin-top: 100px; /* para não ficar atrás do header fixo */
+      padding: 20px;
     }
 
     main h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px #00ffea;
-    }
-
-    main p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      color: #a0fff9cc;
+      font-size: 3.8rem;
+      margin-bottom: 25px;
+      color: #2fffdc;
+      text-shadow:
+        0 0 10px #2fffdc,
+        0 0 30px #2fffdc;
       user-select: text;
     }
 
-    .btn {
-      background-color: #00ffea;
+    main p {
+      font-size: 1.5rem;
+      margin-bottom: 50px;
+      color: #a0f0e8cc;
+      user-select: text;
+    }
+
+    .btn-primary {
+      background-color: #2fffdc;
       color: #121212;
-      font-weight: 700;
-      font-size: 1.3rem;
-      padding: 15px 50px;
       border: none;
-      border-radius: 15px;
+      border-radius: 14px;
+      padding: 18px 60px;
+      font-weight: 700;
+      font-size: 1.4rem;
       cursor: pointer;
-      box-shadow: 0 0 30px #00ffea;
+      box-shadow:
+        0 0 20px #2fffdc,
+        0 0 40px #2fffdc;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
     }
 
-    .btn:hover {
-      background-color: #00c1aa;
-      box-shadow: 0 0 40px #00c1aa;
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #00c4a7;
+      box-shadow:
+        0 0 35px #00c4a7,
+        0 0 60px #00c4a7;
+      outline: none;
     }
 
     footer {
       margin-top: auto;
-      padding: 15px 0;
-      color: #444;
-      font-size: 0.9rem;
-      user-select: none;
+      padding: 20px 40px;
+      font-size: 1rem;
+      color: #555;
+      user-select: text;
       width: 100%;
       text-align: center;
-      border-top: 1px solid #00ffea33;
+      border-top: 1px solid #2fffdc55;
+      background: #111111cc;
+      backdrop-filter: saturate(180%) blur(15px);
     }
 
-    @media (max-width: 480px) {
-      main h1 {
-        font-size: 2.2rem;
-      }
-
-      main p {
-        font-size: 1.1rem;
-      }
-
-      .btn {
-        font-size: 1.1rem;
-        padding: 12px 40px;
-      }
-
+    @media (max-width: 600px) {
       header {
-        padding: 15px 20px;
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
       }
 
       nav a {
         margin-left: 15px;
-        font-size: 0.9rem;
-        padding: 5px 12px;
+        font-size: 1rem;
+        padding: 6px 14px;
+      }
+
+      main h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+
+      main p {
+        font-size: 1.2rem;
+        margin-bottom: 35px;
+      }
+
+      .btn-primary {
+        padding: 14px 45px;
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">Revideo AI</div>
     <nav>
@@ -151,13 +183,12 @@
 
   <main>
     <h1>Revideo AI</h1>
-    <p>Transforme vídeos da internet em conteúdos únicos, otimizados e virais usando inteligência artificial — sem precisar ser expert.</p>
-    <button class="btn" onclick="location.href='upload.html'">Começar Agora</button>
+    <p>Transforme vídeos da internet em conteúdos únicos, otimizados e virais usando inteligência artificial — mesmo sem experiência.</p>
+    <button class="btn-primary" onclick="location.href='upload.html'">Começar Agora</button>
   </main>
 
   <footer>
     &copy; 2025 Revideo AI — Desenvolvido por Luis Arlindo Posso
   </footer>
-
 </body>
 </html>
