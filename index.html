@@ -3,166 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Revideo AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Revideo AI - Plataforma Futurista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Rajdhani', sans-serif;
-      background: radial-gradient(circle at top left, #0f0f0f, #050505);
-      color: #00ffe1;
+      font-family: 'Exo 2', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d 0%, #121212 100%);
+      color: #00ffea;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      align-items: center;
       justify-content: center;
-      overflow-x: hidden;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
     }
 
     header {
-      width: 100%;
-      padding: 30px 40px;
-      background: #111117;
-      box-shadow: 0 0 20px #00ffe1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       position: fixed;
       top: 0;
-      left: 0;
-      z-index: 100;
+      width: 100%;
+      background: #111111;
+      padding: 15px 40px;
+      box-shadow: 0 0 20px #00ffea;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
     }
 
     .logo {
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.8rem;
       letter-spacing: 2px;
-      text-shadow: 0 0 8px #00ffe1;
       user-select: none;
-      cursor: default;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
+      color: #00ffea;
+      text-shadow: 0 0 10px #00ffea;
     }
 
     nav a {
-      color: #00ffe1;
+      color: #00ffea;
+      margin-left: 25px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      padding: 8px 15px;
-      border: 1.5px solid transparent;
+      border: 2px solid transparent;
+      padding: 6px 15px;
       border-radius: 6px;
       transition: all 0.3s ease;
       user-select: none;
     }
 
     nav a:hover {
-      background: #00ffe1;
-      color: #000;
-      border-color: #00ffe1;
-      box-shadow: 0 0 15px #00ffe1;
+      background: #00ffea;
+      color: #121212;
+      border-color: #00ffea;
+      box-shadow: 0 0 15px #00ffea;
     }
 
     main {
-      flex: 1;
-      padding: 120px 40px 60px; /* espaço para header fixo */
-      width: 100%;
-      max-width: 900px;
-      text-align: center;
-      user-select: none;
+      margin-top: 90px;
+      max-width: 700px;
     }
 
-    main .logo-large {
-      font-size: 4rem;
-      font-weight: 900;
-      color: #00ffe1;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-      text-shadow:
-        0 0 10px #00ffe1,
-        0 0 30px #00ffe1,
-        0 0 40px #00ffe1;
+    main h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px #00ffea;
     }
 
     main p {
       font-size: 1.3rem;
-      color: #88fff3;
+      line-height: 1.6;
       margin-bottom: 40px;
-      text-shadow: 0 0 6px #00ffe1aa;
+      color: #a0fff9cc;
+      user-select: text;
     }
 
-    main .btn-primary {
-      background-color: #00ffe1;
-      color: #000;
+    .btn {
+      background-color: #00ffea;
+      color: #121212;
       font-weight: 700;
       font-size: 1.3rem;
-      padding: 15px 45px;
+      padding: 15px 50px;
       border: none;
-      border-radius: 12px;
+      border-radius: 15px;
       cursor: pointer;
-      box-shadow:
-        0 0 15px #00ffe1,
-        0 0 30px #00ffe1;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 0 30px #00ffea;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
     }
 
-    main .btn-primary:hover {
-      background-color: #00c7a4;
-      box-shadow:
-        0 0 25px #00c7a4,
-        0 0 45px #00c7a4;
+    .btn:hover {
+      background-color: #00c1aa;
+      box-shadow: 0 0 40px #00c1aa;
     }
 
     footer {
-      background: #111117;
-      color: #555;
-      padding: 15px 40px;
-      text-align: center;
+      margin-top: auto;
+      padding: 15px 0;
+      color: #444;
       font-size: 0.9rem;
       user-select: none;
-      box-shadow: inset 0 1px 0 #00ffe1;
-      margin-top: auto;
       width: 100%;
+      text-align: center;
+      border-top: 1px solid #00ffea33;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      main {
-        padding: 140px 20px 60px;
-      }
-
-      main .logo-large {
-        font-size: 3rem;
+    @media (max-width: 480px) {
+      main h1 {
+        font-size: 2.2rem;
       }
 
       main p {
         font-size: 1.1rem;
       }
 
-      main .btn-primary {
-        width: 100%;
-        padding: 15px 0;
+      .btn {
         font-size: 1.1rem;
+        padding: 12px 40px;
+      }
+
+      header {
+        padding: 15px 20px;
+      }
+
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+        padding: 5px 12px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">Revideo AI</div>
     <nav>
@@ -174,13 +150,14 @@
   </header>
 
   <main>
-    <div class="logo-large">Revideo AI</div>
-    <p>Transforme vídeos da internet em conteúdos únicos e virais usando inteligência artificial — mesmo sem experiência.</p>
-    <button class="btn-primary" onclick="location.href='upload.html'">Começar Agora</button>
+    <h1>Revideo AI</h1>
+    <p>Transforme vídeos da internet em conteúdos únicos, otimizados e virais usando inteligência artificial — sem precisar ser expert.</p>
+    <button class="btn" onclick="location.href='upload.html'">Começar Agora</button>
   </main>
 
   <footer>
     &copy; 2025 Revideo AI — Desenvolvido por Luis Arlindo Posso
   </footer>
+
 </body>
 </html>
