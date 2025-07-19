@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Revideo AI - Transforme Vídeos com IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: radial-gradient(circle at center, #0e0f12, #1a1c22);
+      color: #e0f7fa;
+      overflow-x: hidden;
+    }
+
+    /* Container central flexível */
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Logo com fonte futurista Orbitron */
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 0.25em;
+      color: #00ffe7;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px #00ffe7,
+        0 0 30px #00ffe7,
+        0 0 60px #00b9a9;
+      margin-bottom: 10px;
+      animation: pulse 3s infinite alternate ease-in-out;
+      user-select: none;
+    }
+
+    /* Slogan */
+    .slogan {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #a0e7efcc;
+      margin-bottom: 40px;
+      max-width: 600px;
+      user-select: text;
+    }
+
+    /* Botão principal */
+    .btn-main {
+      background: linear-gradient(45deg, #00ffe7, #00b9a9);
+      border: none;
+      border-radius: 35px;
+      padding: 18px 60px;
+      color: #101010;
+      font-weight: 700;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow:
+        0 0 15px #00ffe7,
+        0 0 40px #00b9a9;
+      transition: all 0.3s ease;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      filter: drop-shadow(0 0 6px #00b9a9);
+    }
+
+    .btn-main:hover {
+      filter: drop-shadow(0 0 15px #00ffe7);
+      transform: scale(1.05);
+      box-shadow:
+        0 0 25px #00ffe7,
+        0 0 60px #00b9a9;
+    }
+
+    /* Rodapé fixo na base */
+    footer {
+      position: fixed;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      user-select: text;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* Animação do logo */
+    @keyframes pulse {
+      0% {
+        text-shadow:
+          0 0 10px #00ffe7,
+          0 0 30px #00ffe7,
+          0 0 60px #00b9a9;
+      }
+      100% {
+        text-shadow:
+          0 0 15px #00ffe7,
+          0 0 45px #00ffe7,
+          0 0 90px #00b9a9;
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 2.8rem;
+        letter-spacing: 0.15em;
+      }
+
+      .slogan {
+        font-size: 1.2rem;
+        max-width: 90%;
+        margin-bottom: 30px;
+      }
+
+      .btn-main {
+        padding: 14px 45px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Revideo AI</div>
+    <div class="slogan">Transforme vídeos da internet em conteúdos únicos e virais usando inteligência artificial — sem complicação.</div>
+    <button class="btn-main" onclick="location.href='upload.html'">Começar Agora</button>
+  </div>
+
+  <footer>
+    Desenvolvido por Luis Arlindo Posso © 2025
+  </footer>
+</body>
+</html>
