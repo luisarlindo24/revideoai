@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Revideo AI — Vídeos virais com IA</title>
+  <title>Revideo AI — Transforme vídeos com IA</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
+    /* Reset básico */
     *, *::before, *::after {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -19,13 +18,12 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      padding: 70px 15px 40px; /* topo maior para header fixo */
       text-align: center;
-      padding: 60px 15px 40px;
       position: relative;
       overflow-x: hidden;
     }
-
-    /* Fundo animado sutil */
+    /* Fundo animado suave */
     body::before {
       content: "";
       position: fixed;
@@ -40,256 +38,309 @@
       pointer-events: none;
       filter: blur(100px);
     }
-
     @keyframes pulseGlow {
       0%, 100% { transform: scale(1); opacity: 0.06; }
       50% { transform: scale(1.05); opacity: 0.1; }
     }
 
+    /* Menu fixo no topo */
     header {
-      font-weight: 700;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: #0a0a0fcc;
+      backdrop-filter: saturate(180%) blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      box-shadow: 0 1px 15px rgba(0,255,247,0.2);
+      z-index: 100;
+      user-select: none;
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: #00fff7;
+      text-shadow: 0 0 8px #00fff7aa;
+      font-family: 'Inter', sans-serif;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
       background: linear-gradient(90deg, #00fff7, #00b3a9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 32px;
+      cursor: pointer;
       user-select: none;
-      text-shadow: 0 0 8px #00fff7aa;
-      z-index: 1;
-      position: relative;
+    }
+    nav a {
+      color: #00fff7;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-left: 24px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a:focus {
+      background: #00b3a9;
+      color: #0a0a0f;
+      outline: none;
+      box-shadow: 0 0 10px #00fff7cc;
+      transform: scale(1.1);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+      nav a {
+        margin-left: 16px;
+        font-size: 0.9rem;
+      }
     }
 
     main {
       flex: 1;
       max-width: 900px;
       margin: 0 auto;
-      z-index: 1;
+      background: #1a1a24;
+      border-radius: 16px;
+      padding: 36px 48px;
+      box-shadow: 0 0 40px #00fff7aa;
       position: relative;
+      z-index: 1;
+      text-align: left;
+      color: #c0e8e6;
     }
-
     h1 {
       font-weight: 900;
-      font-size: clamp(2.6rem, 6vw, 3.4rem);
-      margin-bottom: 16px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 12px;
       background: linear-gradient(90deg, #00fff7, #00b3a9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 12px #00fff7cc;
+      text-shadow: 0 0 15px #00fff7cc;
       line-height: 1.1;
+      text-align: center;
     }
-
     p.lead {
-      font-weight: 500;
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      color: #8ccccc;
-      margin-bottom: 56px;
-      line-height: 1.5;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 36px;
+      text-align: center;
+      color: #7de4dbcc;
     }
 
-    /* Funcionalidades */
+    /* Features */
     .features {
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 28px;
-      margin-bottom: 64px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
     }
-
     .feature-item {
-      background: #1a1a24;
-      border-radius: 18px;
-      padding: 30px 24px;
-      max-width: 300px;
-      box-shadow: 0 0 25px #00fff7aa;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      background: #12121a;
+      flex: 1 1 280px;
+      border-radius: 14px;
+      padding: 24px 20px;
+      box-shadow: 0 0 20px #00fff7aa;
+      transition: transform 0.3s ease;
       cursor: default;
+      user-select: none;
       outline-offset: 4px;
     }
-
-    .feature-item:focus,
-    .feature-item:hover {
+    .feature-item:hover,
+    .feature-item:focus {
       transform: translateY(-10px);
-      box-shadow: 0 0 45px #00fff7ee;
+      box-shadow: 0 0 40px #00fff7ee;
       outline: none;
     }
-
     .feature-icon {
       width: 48px;
       height: 48px;
-      margin: 0 auto 18px auto;
+      margin-bottom: 18px;
       fill: #00fff7;
-      filter: drop-shadow(0 0 5px #00fff7aa);
-      transition: filter 0.3s ease;
+      filter: drop-shadow(0 0 3px #00fff7aa);
     }
-
-    .feature-item:hover .feature-icon,
-    .feature-item:focus .feature-icon {
-      filter: drop-shadow(0 0 12px #00fff7ff);
-    }
-
     .feature-title {
       font-weight: 700;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
       color: #00fff7;
     }
-
     .feature-desc {
       font-size: 1rem;
-      color: #a0dcdc;
+      color: #a0d8d7cc;
       line-height: 1.4;
     }
 
-    /* Como funciona */
+    /* How it works */
     .how-it-works {
-      margin-bottom: 64px;
+      margin-bottom: 56px;
     }
-
     .how-title {
-      font-weight: 700;
-      font-size: clamp(2.1rem, 5vw, 2.8rem);
-      margin-bottom: 40px;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      text-align: center;
       color: #00fff7;
-      text-shadow: 0 0 15px #00fff7aa;
+      text-shadow: 0 0 12px #00fff7cc;
     }
-
     .steps {
       display: flex;
       justify-content: space-between;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-
     .step {
-      background: #1a1a24;
-      border-radius: 18px;
-      padding: 28px 22px;
-      max-width: 280px;
-      box-shadow: 0 0 25px #00fff7aa;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      background: #12121a;
+      border-radius: 12px;
+      padding: 22px 18px;
+      flex: 1 1 280px;
+      box-shadow: 0 0 30px #00fff7aa;
+      cursor: default;
+      user-select: none;
       outline-offset: 4px;
+      transition: transform 0.3s ease;
     }
-
-    .step:focus,
-    .step:hover {
+    .step:hover,
+    .step:focus {
       transform: translateY(-8px);
-      box-shadow: 0 0 40px #00fff7ff;
+      box-shadow: 0 0 50px #00fff7ee;
       outline: none;
     }
-
     .step-number {
+      background: linear-gradient(90deg, #00fff7, #00b3a9);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
       font-weight: 900;
-      font-size: 3rem;
-      color: #00fff7;
-      margin-bottom: 16px;
+      font-size: 1.3rem;
+      color: #0a0a0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
       user-select: none;
+      box-shadow: 0 0 10px #00fff7cc;
     }
-
     .step-title {
       font-weight: 700;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
       color: #00fff7;
     }
-
     .step-desc {
       font-size: 1rem;
-      color: #9adada;
-      line-height: 1.5;
+      color: #a0d8d7cc;
+      line-height: 1.4;
     }
 
-    /* Chamada para ação */
+    /* Call to action */
     .cta {
-      margin-top: 30px;
+      text-align: center;
     }
-
     .btn-main {
       background: linear-gradient(90deg, #00fff7, #00b3a9);
-      color: #0a0a0f;
       border: none;
-      border-radius: 28px;
-      padding: 18px 68px;
-      font-weight: 800;
-      font-size: 1.3rem;
+      border-radius: 32px;
+      padding: 18px 70px;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #0a0a0f;
       cursor: pointer;
-      box-shadow: 0 0 40px #00fff7cc;
+      box-shadow: 0 0 60px #00fff7cc;
       transition: background 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       font-family: 'Inter', sans-serif;
     }
-
     .btn-main:hover,
     .btn-main:focus {
       background: linear-gradient(90deg, #00b3a9, #00fff7);
-      box-shadow: 0 0 60px #00fff7ff;
+      box-shadow: 0 0 90px #00fff7ff;
       outline: none;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     footer {
+      text-align: center;
       font-size: 0.9rem;
-      color: #555a5a;
-      margin-top: 80px;
-      user-select: text;
-      z-index: 1;
-      position: relative;
+      color: #3fd7cecc;
+      padding: 18px 12px;
+      user-select: none;
+      letter-spacing: 1px;
+      background: #0a0a0f;
+      box-shadow: inset 0 1px 3px #00fff73d;
+      margin-top: auto;
     }
 
     /* Responsividade */
-    @media (max-width: 920px) {
-      .features,
-      .steps {
+    @media (max-width: 960px) {
+      main {
+        padding: 28px 32px;
+      }
+      .features, .steps {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .feature-item, .step {
+        flex: 1 1 auto;
+      }
+    }
+    @media (max-width: 600px) {
+      header {
         justify-content: center;
       }
-    }
-
-    @media (max-width: 640px) {
-      .features,
-      .steps {
-        flex-direction: column;
-        align-items: center;
-      }
-      .feature-item,
-      .step {
-        max-width: 100%;
+      nav a {
+        margin-left: 16px;
+        font-size: 0.9rem;
       }
       main {
-        padding: 0 15px;
+        padding: 20px 20px;
       }
-    }
-
-    /* Foco visível para acessibilidade */
-    .feature-item:focus-visible,
-    .step:focus-visible,
-    .btn-main:focus-visible {
-      outline: 3px solid #00fff7;
-      outline-offset: 4px;
+      .btn-main {
+        padding: 16px 50px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>Revideo AI</header>
-  <main>
-    <h1>Vídeos virais com inteligência artificial</h1>
-    <p class="lead">Crie conteúdo viral em segundos.</p>
+  <header>
+    <div class="logo" onclick="location.href='index.html'" tabindex="0" role="link" aria-label="Página inicial Revideo AI">
+      Revideo AI
+    </div>
+    <nav>
+      <a href="upload.html" tabindex="0">Começar</a>
+    </nav>
+  </header>
 
-    <!-- Funcionalidades -->
-    <section class="features" aria-label="Funcionalidades principais">
+  <main>
+    <h1>Transforme vídeos da internet em conteúdo viral com IA</h1>
+    <p class="lead">Revideo AI é a plataforma definitiva para criar vídeos únicos e profissionais, mesmo sem experiência. Upload, roteiros, edição e publicação, tudo automatizado com inteligência artificial.</p>
+
+    <section class="features" aria-label="Principais funcionalidades do Revideo AI">
       <article class="feature-item" tabindex="0" aria-labelledby="feature1-title" aria-describedby="feature1-desc">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M48 12H16a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V16a4 4 0 0 0-4-4Zm-1.5 30-11-9v7H22v4h13.5v7l11-9Z" />
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M32 12a20 20 0 1 0 20 20A20 20 0 0 0 32 12Zm0 36a16 16 0 1 1 16-16 16 16 0 0 1-16 16Z"/>
+          <path d="M28 22h8v4h-8zm0 8h12v4H28z"/>
         </svg>
-        <h3 id="feature1-title" class="feature-title">Upload fácil</h3>
-        <p id="feature1-desc" class="feature-desc">Envie vídeos ou cole links do YouTube, TikTok, Instagram e outros.</p>
+        <h3 id="feature1-title" class="feature-title">Upload e links inteligentes</h3>
+        <p id="feature1-desc" class="feature-desc">Envie seus vídeos ou cole links do YouTube, TikTok e Instagram para análise automática.</p>
       </article>
 
       <article class="feature-item" tabindex="0" aria-labelledby="feature2-title" aria-describedby="feature2-desc">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <path d="M32 12a20 20 0 1 0 20 20A20 20 0 0 0 32 12Zm0 36a16 16 0 1 1 16-16 16 16 0 0 1-16 16Z"/>
           <path d="M28 22h8v4h-8zm0 8h12v4H28z"/>
         </svg>
@@ -298,7 +349,7 @@
       </article>
 
       <article class="feature-item" tabindex="0" aria-labelledby="feature3-title" aria-describedby="feature3-desc">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <path d="M48 44V20H16v24Zm-2-22 4 4-4 4-4-4ZM22 44h20v4H22Z"/>
         </svg>
         <h3 id="feature3-title" class="feature-title">Estilos personalizados</h3>
@@ -306,7 +357,6 @@
       </article>
     </section>
 
-    <!-- Como funciona -->
     <section class="how-it-works" aria-label="Como funciona o Revideo AI">
       <h2 class="how-title">Como funciona</h2>
       <div class="steps">
@@ -328,7 +378,6 @@
       </div>
     </section>
 
-    <!-- Chamada para ação -->
     <section class="cta">
       <button class="btn-main" onclick="location.href='upload.html'">Começar Agora</button>
     </section>
@@ -337,3 +386,4 @@
   <footer>© 2025 Revideo AI — Desenvolvido por Luis Arlindo Posso</footer>
 </body>
 </html>
+
