@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Revideo AI - Plataforma Futurista</title>
-  <!-- Fonte Inter para alta legibilidade -->
+  <title>Revideo AI - Plataforma Futurista e Profissional</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset básico */
@@ -14,17 +13,13 @@
 
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
-      color: #a0f0e8;
+      background: linear-gradient(135deg, #121212 0%, #1b1b1b 100%);
+      color: #D1E8E7;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 50px 20px;
       line-height: 1.6;
       user-select: none;
     }
@@ -34,10 +29,10 @@
       top: 0;
       left: 0;
       right: 0;
-      background: #111111cc;
-      backdrop-filter: saturate(180%) blur(15px);
-      box-shadow: 0 0 15px #2fffdcaa;
-      padding: 15px 40px;
+      background: rgba(27, 27, 27, 0.9);
+      backdrop-filter: saturate(180%) blur(12px);
+      box-shadow: 0 0 15px #3ddbd9cc;
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,16 +41,17 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       letter-spacing: 3px;
-      color: #2fffdc;
-      text-shadow: 0 0 15px #2fffdc;
+      color: #3ddbd9;
+      text-shadow:
+        0 0 15px #3ddbd9;
       user-select: text;
       cursor: default;
     }
 
     nav a {
-      color: #2fffdc;
+      color: #3ddbd9;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
@@ -71,39 +67,45 @@
       margin-left: 0;
     }
 
-    nav a:hover, nav a:focus {
-      background-color: #2fffdc;
+    nav a:hover,
+    nav a:focus {
+      background-color: #3ddbd9;
       color: #121212;
       outline: none;
-      box-shadow: 0 0 20px #2fffdc;
-      border-color: #2fffdc;
+      box-shadow:
+        0 0 20px #3ddbd9,
+        0 0 40px #3ddbd9;
+      border-color: #3ddbd9;
     }
 
     main {
       max-width: 720px;
-      margin-top: 100px; /* para não ficar atrás do header fixo */
-      padding: 20px;
+      margin: 110px auto 0;
+      padding: 0 20px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      user-select: text;
     }
 
     main h1 {
       font-size: 3.8rem;
       margin-bottom: 25px;
-      color: #2fffdc;
+      color: #3ddbd9;
       text-shadow:
-        0 0 10px #2fffdc,
-        0 0 30px #2fffdc;
-      user-select: text;
+        0 0 10px #3ddbd9,
+        0 0 30px #3ddbd9;
     }
 
     main p {
       font-size: 1.5rem;
       margin-bottom: 50px;
-      color: #a0f0e8cc;
-      user-select: text;
+      color: #8da1a0;
     }
 
     .btn-primary {
-      background-color: #2fffdc;
+      background-color: #3ddbd9;
       color: #121212;
       border: none;
       border-radius: 14px;
@@ -112,39 +114,43 @@
       font-size: 1.4rem;
       cursor: pointer;
       box-shadow:
-        0 0 20px #2fffdc,
-        0 0 40px #2fffdc;
+        0 0 20px #3ddbd9,
+        0 0 40px #3ddbd9;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
+      align-self: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-sizing: border-box;
     }
 
     .btn-primary:hover,
     .btn-primary:focus {
-      background-color: #00c4a7;
+      background-color: #1a8f8e;
       box-shadow:
-        0 0 35px #00c4a7,
-        0 0 60px #00c4a7;
+        0 0 35px #1a8f8e,
+        0 0 60px #1a8f8e;
       outline: none;
     }
 
     footer {
-      margin-top: auto;
       padding: 20px 40px;
       font-size: 1rem;
-      color: #555;
+      color: #777777;
       user-select: text;
       width: 100%;
       text-align: center;
-      border-top: 1px solid #2fffdc55;
-      background: #111111cc;
-      backdrop-filter: saturate(180%) blur(15px);
+      border-top: 1px solid #2a7f7e55;
+      background: rgba(27, 27, 27, 0.9);
+      backdrop-filter: saturate(180%) blur(12px);
     }
 
+    /* Responsivo */
     @media (max-width: 600px) {
       header {
-        padding: 12px 20px;
         flex-direction: column;
         gap: 10px;
+        padding: 15px 20px;
       }
 
       nav a {
