@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revideo AI</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #00ffcc;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReVideo AI - Transforme Vídeos com IA</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="ReVideo AI" class="logo">
+
+    <h1>Transforme qualquer vídeo em conteúdo viral com IA</h1>
+
+    <p>Envie um vídeo ou cole um link do YouTube, TikTok ou Instagram</p>
+
+    <form id="videoForm">
+      <input type="file" id="videoUpload" accept="video/*">
+      <input type="text" id="videoLink" placeholder="https://youtube.com/..." />
+      <button type="submit">Continuar</button>
+      <p class="error" id="errorMessage"></p>
+    </form>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
 <body>
   <h1>Bem-vindo ao Revideo AI</h1>
   <p>Seu site está funcionando perfeitamente!</p>
