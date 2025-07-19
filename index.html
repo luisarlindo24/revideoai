@@ -1,45 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Revideo AI</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #0f0f0f, #050505);
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .logo {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: #00ffe1;
+      letter-spacing: 2px;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffe1, 0 0 40px #00ffe1;
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00ffe1;
+      border: 1px solid #00ffe1;
+      padding: 12px 25px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #00ffe1;
+      color: #000;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      width: 100%;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Revideo AI Logo">
-      <h1>Revideo AI</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="logo">🔷 Revideo AI</div>
+    <p style="margin-top: 10px; color: #888; font-size: 1rem;">
+      Inteligência Artificial para Vídeos | Rápido. Inteligente. Futurista.
+    </p>
   </header>
 
-  <main>
-    <section class="upload-section">
-      <h2>Transforme seu vídeo com IA</h2>
-      <p>Carregue um vídeo ou cole o link abaixo</p>
-
-      <div class="upload-area">
-        <input type="file" id="videoUpload" accept="video/*">
-        <span>Ou cole o link do vídeo</span>
-        <input type="text" id="videoLink" placeholder="https://youtube.com/...">
-        <button onclick="continuar()">Continuar</button>
-      </div>
-    </section>
-  </main>
+  <nav>
+    <a href="upload.html">Upload de Vídeo</a>
+    <a href="preview.html">Pré-visualização</a>
+    <a href="editor.html">Editor Inteligente</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
 
   <footer>
-    <p>© 2025 Revideo AI. Todos os direitos reservados.</p>
+    &copy; 2025 Revideo AI — Todos os direitos reservados. <br />
+    Desenvolvido por Luis Arlindo Posso
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
