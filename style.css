@@ -1,55 +1,135 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #121212;
-  font-family: 'Arial', sans-serif;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+/* Fonte futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+  --cor-primaria: #00fff7;
+  --cor-secundaria: #1b1b1f;
+  --cor-fundo: #0a0a0f;
+  --cor-borda: #00fff7;
+  --cor-texto: #ffffff;
+  --cor-hover: #00d0c0;
 }
 
-.container {
-  text-align: center;
-  max-width: 500px;
-  padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background: var(--cor-secundaria);
+  border-bottom: 2px solid var(--cor-borda);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  width: 120px;
-  margin-bottom: 20px;
-}
-
-form {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 15px;
 }
 
-input[type="file"],
-input[type="text"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+.logo img {
+  height: 50px;
+  width: 50px;
 }
 
-button {
-  background-color: #1DB954;
+.logo h1 {
+  color: var(--cor-primaria);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cor-hover);
+}
+
+/* Seção principal */
+main {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+}
+
+.upload-section p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #111117;
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid var(--cor-borda);
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px var(--cor-borda);
+}
+
+.upload-area input[type="file"],
+.upload-area input[type="text"] {
+  padding: 15px;
+  width: 100%;
+  background: #1c1c25;
+  border: 1px solid var(--cor-primaria);
+  border-radius: 8px;
   color: white;
+  font-size: 1rem;
+}
+
+.upload-area button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  background-color: var(--cor-primaria);
+  color: #000;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #17a64b;
+.upload-area button:hover {
+  background-color: var(--cor-hover);
 }
 
-.error {
-  color: #ff5252;
-  font-size: 14px;
+/* Rodapé */
+footer {
+  background: var(--cor-secundaria);
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid var(--cor-borda);
 }
