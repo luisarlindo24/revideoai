@@ -11,15 +11,15 @@
       font-family: 'Inter', sans-serif;
       background: #121212;
       color: #d1e8e7;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
       text-align: center;
       padding: 60px 20px 40px;
     }
     header {
       font-weight: 700;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: #3ddbd9;
       margin-bottom: 30px;
       user-select: none;
@@ -27,60 +27,156 @@
     }
     main {
       flex: 1;
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
     }
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 12px;
       color: #3ddbd9;
       text-shadow: 0 0 15px #3ddbd9;
       line-height: 1.1;
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
+    p.lead {
+      font-size: 1.3rem;
       color: #8da1a0;
+      margin-bottom: 50px;
       line-height: 1.4;
     }
-    button {
+
+    /* Seção funcionalidades */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .feature-item {
+      background: #1f1f1f;
+      border-radius: 16px;
+      padding: 25px 20px;
+      max-width: 280px;
+      box-shadow: 0 0 15px #3ddbd9aa;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .feature-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #3ddbd9cc;
+    }
+    .feature-icon {
+      font-size: 48px;
+      color: #3ddbd9;
+      margin-bottom: 18px;
+    }
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #3ddbd9;
+    }
+    .feature-desc {
+      font-size: 1rem;
+      color: #abbac1;
+      line-height: 1.3;
+    }
+
+    /* Como funciona */
+    .how-it-works {
+      margin-bottom: 60px;
+    }
+    .how-title {
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #3ddbd9;
+      text-shadow: 0 0 12px #3ddbd9;
+    }
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .step {
+      background: #1f1f1f;
+      border-radius: 16px;
+      padding: 25px 20px;
+      max-width: 280px;
+      box-shadow: 0 0 15px #3ddbd9aa;
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px #3ddbd9cc;
+    }
+    .step-number {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #3ddbd9;
+      margin-bottom: 12px;
+      user-select: none;
+    }
+    .step-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #3ddbd9;
+    }
+    .step-desc {
+      font-size: 1rem;
+      color: #abbac1;
+      line-height: 1.3;
+    }
+
+    /* Chamada para ação */
+    .cta {
+      margin-top: 20px;
+    }
+    .btn-main {
       background-color: #3ddbd9;
       color: #121212;
       border: none;
       border-radius: 24px;
-      padding: 14px 56px;
+      padding: 16px 64px;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       cursor: pointer;
-      box-shadow: 0 0 20px #3ddbd9;
+      box-shadow: 0 0 30px #3ddbd9;
       transition: background-color 0.3s ease;
       user-select: none;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
     }
-    button:hover {
+    .btn-main:hover {
       background-color: #1a8f8e;
-      box-shadow: 0 0 35px #1a8f8e;
+      box-shadow: 0 0 50px #1a8f8e;
     }
+
     footer {
       font-size: 0.9rem;
       color: #777;
-      margin-top: 50px;
+      margin-top: 60px;
       user-select: text;
     }
-    @media (max-width: 480px) {
-      header {
-        font-size: 1.8rem;
+
+    /* Responsividade */
+    @media (max-width: 920px) {
+      .features, .steps {
+        justify-content: center;
       }
-      h1 {
-        font-size: 2rem;
+    }
+    @media (max-width: 640px) {
+      .features, .steps {
+        flex-direction: column;
+        align-items: center;
       }
-      p {
-        font-size: 1rem;
+      .feature-item, .step {
+        max-width: 100%;
       }
-      button {
-        padding: 12px 40px;
-        font-size: 1rem;
+      main {
+        padding: 0 10px;
       }
     }
   </style>
@@ -89,9 +185,55 @@
   <header>Revideo AI</header>
   <main>
     <h1>Vídeos virais com inteligência artificial</h1>
-    <p>Crie conteúdo viral em segundos.</p>
-    <button onclick="location.href='upload.html'">Começar</button>
+    <p class="lead">Crie conteúdo viral em segundos.</p>
+
+    <!-- Funcionalidades -->
+    <section class="features" aria-label="Funcionalidades principais">
+      <div class="feature-item" tabindex="0">
+        <div class="feature-icon">📤</div>
+        <h3 class="feature-title">Upload fácil</h3>
+        <p class="feature-desc">Envie vídeos ou cole links do YouTube, TikTok, Instagram e outros.</p>
+      </div>
+      <div class="feature-item" tabindex="0">
+        <div class="feature-icon">🤖</div>
+        <h3 class="feature-title">Roteiros inteligentes</h3>
+        <p class="feature-desc">Gere roteiros otimizados com gatilhos mentais para viralizar.</p>
+      </div>
+      <div class="feature-item" tabindex="0">
+        <div class="feature-icon">🎨</div>
+        <h3 class="feature-title">Estilos personalizados</h3>
+        <p class="feature-desc">Escolha estilos de vídeo realista, animação, stickman e muito mais.</p>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="how-it-works" aria-label="Como funciona o Revideo AI">
+      <h2 class="how-title">Como funciona</h2>
+      <div class="steps">
+        <div class="step" tabindex="0">
+          <div class="step-number">1</div>
+          <h4 class="step-title">Envie seu vídeo</h4>
+          <p class="step-desc">Faça upload ou cole o link do vídeo que quer transformar.</p>
+        </div>
+        <div class="step" tabindex="0">
+          <div class="step-number">2</div>
+          <h4 class="step-title">A IA cria roteiros</h4>
+          <p class="step-desc">Nossa inteligência artificial gera roteiros otimizados e criativos.</p>
+        </div>
+        <div class="step" tabindex="0">
+          <div class="step-number">3</div>
+          <h4 class="step-title">Finalize e viralize</h4>
+          <p class="step-desc">Edite se quiser e publique seus vídeos prontos para viralizar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada para ação -->
+    <section class="cta">
+      <button class="btn-main" onclick="location.href='upload.html'">Começar Agora</button>
+    </section>
   </main>
+
   <footer>© 2025 Revideo AI — Desenvolvido por Luis Arlindo Posso</footer>
 </body>
 </html>
