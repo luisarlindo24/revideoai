@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReVideo AI - Transforme links em vídeos</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
+  <header class="mb-8">
+    <h1 class="text-5xl font-extrabold">ReVideo AI</h1>
+    <p class="mt-4 text-xl max-w-lg text-center">Transforme links em vídeos automaticamente com inteligência artificial.</p>
+  </header>
+
+  <a href="upload.html" class="px-6 py-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition">Testar Agora</a>
+
+  <footer class="mt-20 text-gray-500 text-sm">&copy; 2025 Luis Arlindo Posso</footer>
+</body>
+</html>
